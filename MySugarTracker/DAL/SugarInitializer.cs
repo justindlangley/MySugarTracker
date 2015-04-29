@@ -7,7 +7,7 @@ using MySugarTracker.Models;
 
 namespace MySugarTracker.DAL
 {
-    public class SugarInitializer : System.Data.Entity.
-    {
-    }
+    //public class SugarInitializer : System.Data.Entity.
+    //{
+    //}
 }
