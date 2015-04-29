@@ -14,14 +14,15 @@ namespace MySugarTracker.DAL
 
         public SugarContext() : base("SugarContext")
         {
+        }
             public DbSet<Patient> Patients { get; set; }
             public DbSet<User> Users { get; set; }
-
+        
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
  	 modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
         }
 
-        }
+        
     }
 }
