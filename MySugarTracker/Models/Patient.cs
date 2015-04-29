@@ -8,30 +8,42 @@ namespace MySugarTracker.Models
 {
     public class Patient : User
     {
-        [DataType(DataType.Date)]
-        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode=true)]
+        [Required, DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         public int BirthDate { get; set; }
-        
 
+        [Required]
         public bool? CVD { get; set; }
+        [Required]
         public bool? HBP { get; set; }
-        public bool? Thyroid { get; set;}
-        public bool? Female { get; set;}
+        [Required]
+        public bool? Thyroid { get; set; }
+        [Required]
+        public bool? Female { get; set; }
+        [Required]
         public bool? Pregnant { get; set; }
-       
+
         //Does patient prefer to receive notifications and reminders from email or SMS, or both.
         [Required]
-        public bool EmailPref {get; set;}
+        public bool EmailPref { get; set; }
         [Required]
         public bool SMSpref { get; set; }
 
-        public int Age { get { return DateTime.Now.Year - BirthDate; } set; } 
+        //public int Age { get { return DateTime.Now.Year - BirthDate; } set; }
 
         //Use Height and weight to calculate BMI
-        public int Weight { get; set;}
+        [Required]
+        public int WeightInPounds { get; set; }
+        [Required]
         public int Height { get; set; }
-        public int BMI {get {return (Weight * 703) / ; set; }
-
-
+        [Required]
+        public int HeightInInches { get; set; }
+        public int BMI
+        {
+            get
+            {
+                return (WeightInPounds * 703) / (HeightInInches * HeightInInches);
+            }
+        }
     }
 }
