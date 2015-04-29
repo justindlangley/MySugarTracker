@@ -6,6 +6,11 @@ using System.Web;
 namespace MySugarTracker.Models
 {
     public class PatientSugarData
-    {
+    
+        
+        public int patientSugarDataID { get; set; }
+        public int patientSugarReading { get; set; }
+        public DateTime dateTime { get; set; }
+        
     }
 }

@@ -8,6 +8,8 @@ namespace MySugarTracker.Models
 {
     public class User
     {
+        [Required]
+        public int UserID { get; set; }
         [StringLength(50, ErrorMessage = "First name cannot be longer than 50 characters")]
         public string FirstName { get; set; }
         [StringLength(50, ErrorMessage = "Last name cannot be longer than 50 characters")]
@@ -17,7 +19,7 @@ namespace MySugarTracker.Models
         public string Email { get; set; }
         [Phone]
         public int PhoneNumber { get; set; }
-        public int ID { get; set; }
+        
         //public string Name { get { return FirstName + " " + LastName ; set; }
 
     }
