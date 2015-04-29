@@ -20,15 +20,17 @@ namespace MySugarTracker.Models
         public bool? Pregnant { get; set; }
        
         //Does patient prefer to receive notifications and reminders from email or SMS, or both.
+        [Required]
         public bool EmailPref {get; set;}
+        [Required]
         public bool SMSpref { get; set; }
 
-        //public int Age {get; {return (DateTime.Now - BirthDate)}} 
+        public int Age { get { return DateTime.Now.Year - BirthDate; } set; } 
 
         //Use Height and weight to calculate BMI
         public int Weight { get; set;}
         public int Height { get; set; }
-        public int BMI {get; set; }
+        public int BMI {get {return (Weight * 703) / ; set; }
 
 
     }

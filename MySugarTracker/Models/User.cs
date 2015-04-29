@@ -15,9 +15,10 @@ namespace MySugarTracker.Models
         [Required(ErrorMessage="You must enter a valid email.")]
         [EmailAddress]
         public string Email { get; set; }
+        [Phone]
         public int PhoneNumber { get; set; }
         public int ID { get; set; }
-        public string Name { get; set; }
+        public string Name { get { return FirstName + " " + LastName; } set; }
 
     }
 }
