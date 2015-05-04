@@ -7,8 +7,9 @@ namespace MySugarTracker.Models
 {
     public class PatientSugarData
     {
-        
-        public int patientSugarDataID { get; set; }
+        public int PatientSugarDataID { get; set; }
+        [ForeignKey ]
+        public int PatientID { get; set;}        
         public int patientSugarReading { get; set; }
         public DateTime dateTime { get; set; }
         

@@ -20,7 +20,6 @@ namespace MySugarTracker.Models
         [Phone]
         public int PhoneNumber { get; set; }
         
-        //public string Name { get { return FirstName + " " + LastName ; set; }
 
     }
 }

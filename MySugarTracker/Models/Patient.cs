@@ -13,7 +13,7 @@ namespace MySugarTracker.Models
         [Required]
         [Key]
         [ForeignKey("User")]
-        public int PatientID { get; set; }
+        public int UserID { get; set; }
 
 
         [Required, DataType(DataType.Date)]
@@ -21,11 +21,11 @@ namespace MySugarTracker.Models
         public int BirthDate { get; set; }
 
         [Required]
-        public bool? CVD { get; set; }
+        public bool? CardioVascularDisease { get; set; }
         [Required]
-        public bool? HBP { get; set; }
+        public bool? HighBloodPressure { get; set; }
         [Required]
-        public bool? Thyroid { get; set; }
+        public bool? ThyroidDisease { get; set; }
         [Required]
         public bool? Female { get; set; }
         [Required]
@@ -42,8 +42,6 @@ namespace MySugarTracker.Models
         //Use Height and weight to calculate BMI
         [Required]
         public int WeightInPounds { get; set; }
-        [Required]
-        public int Height { get; set; }
         [Required]
         public int HeightInInches { get; set; }
         public int BMI
