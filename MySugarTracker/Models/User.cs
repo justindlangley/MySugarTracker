@@ -26,8 +26,8 @@ namespace MySugarTracker.Models
         [EmailAddress]
         public string Email { get; set; }
 
-        [Phone]
-        public int PhoneNumber { get; set; }
+        
+        public long PhoneNumber { get; set; }
 
         [Display(Name="Full Name")]
         public string FullName
