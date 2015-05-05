@@ -8,20 +8,19 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace MySugarTracker.Models
 {
-    public class Patient : User
+    public class Patient 
     {
         [Required]
         [Key]
         [ForeignKey("User")]
         public int UserID { get; set; }
 
-        [Required]
-        [ForeignKey("User")]
-        public int DrID { get; set; }
+        //[Required]
+        //public int DrID { get; set; }
 
     
-        [ForeignKey("User")]
-        public int CaseManagerID {get; set;}
+        //[ForeignKey("User")]
+        //public int CaseManagerID {get; set;}
 
 
         [Required, DataType(DataType.Date)]
@@ -69,7 +68,7 @@ namespace MySugarTracker.Models
                 return (WeightInPounds * 703) / (HeightInInches * HeightInInches);
             }
         }
-
+        public virtual User User { get; set; }
         public virtual ICollection<PatientSugarData> PatientSugarData { get; set; }
     }
 }
