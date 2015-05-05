@@ -15,10 +15,18 @@ namespace MySugarTracker.Models
         [ForeignKey("User")]
         public int UserID { get; set; }
 
+        [Required]
+        [ForeignKey("User")]
+        public int DrID { get; set; }
+
+        [Required]
+        [ForeignKey("User")]
+        public int CaseManagerID {get; set;}
+
 
         [Required, DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
-        public int BirthDate { get; set; }
+        public DateTime BirthDate { get; set; }
 
         [Required]
         public bool? CardioVascularDisease { get; set; }
@@ -37,6 +45,10 @@ namespace MySugarTracker.Models
         [Required]
         public bool SMSpref { get; set; }
 
+        public int LowAlert { get; set; }
+        public int HighAlert { get; set; }
+        
+
         //public int Age { get { return DateTime.Now.Year - BirthDate; } set; }
 
         //Use Height and weight to calculate BMI
@@ -51,5 +63,7 @@ namespace MySugarTracker.Models
                 return (WeightInPounds * 703) / (HeightInInches * HeightInInches);
             }
         }
+
+        public virtual ICollection<PatientSugarData> PatientSugarData { get; set; }
     }
 }
