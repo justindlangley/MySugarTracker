@@ -12,6 +12,10 @@ namespace MySugarTracker.Models
         public int UserID { get; set; }
 
 
+        //Valid values are D=Dr P=Patient C=CaseManager
+        [Required]
+        public char Role { get; set; }
+
         [StringLength(50, ErrorMessage = "First name cannot be longer than 50 characters")]
         public string FirstName { get; set; }
 
