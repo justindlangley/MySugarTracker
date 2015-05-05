@@ -19,7 +19,7 @@ namespace MySugarTracker.Models
         [ForeignKey("User")]
         public int DrID { get; set; }
 
-        [Required]
+    
         [ForeignKey("User")]
         public int CaseManagerID {get; set;}
 
