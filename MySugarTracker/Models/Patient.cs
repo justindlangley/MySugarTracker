@@ -47,6 +47,12 @@ namespace MySugarTracker.Models
 
         public int LowAlert { get; set; }
         public int HighAlert { get; set; }
+
+        public DateTime TestTime1 { get; set; }
+        public DateTime TestTime2 { get; set; }
+        public DateTime TestTime3 { get; set; }
+        public DateTime TestTime4 { get; set; }
+
         
 
         //public int Age { get { return DateTime.Now.Year - BirthDate; } set; }

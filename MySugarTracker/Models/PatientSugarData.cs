@@ -10,7 +10,7 @@ namespace MySugarTracker.Models
     public class PatientSugarData
     {
         public int PatientSugarDataID { get; set; }
-        public int PatientID { get; set;}        
+        public int UserID { get; set;}        
         public int patientSugarReading { get; set; }
         public DateTime dateTime { get; set; }
         
