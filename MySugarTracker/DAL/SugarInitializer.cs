@@ -13,16 +13,16 @@ namespace MySugarTracker.DAL
         {
             var users = new List<User>
             {
-            new User {FirstName="Daniel", LastName="Von Huffinstuff", Email="doctordan@dmc.net", PhoneNumber=3139644114, Role='D'},
+            new User {FirstName="Daniel", LastName="Sledge", Email="doctordan@dmc.net", PhoneNumber=3139644114, Role='D'},
             new User {FirstName="Robert", LastName="Baker", Email="rbaker@dmc.net", PhoneNumber=3139635533, Role='D' },                   
             new User {FirstName="Frank", LastName="Jones", Email="fjones@bcbs.com", PhoneNumber=3132234567, Role='C'},
             new User {FirstName="Belinda", LastName="Johnson", Email="bjohnson@bcbs.com", PhoneNumber=3132247654, Role='C'},
-            new User {FirstName="Zaul", LastName="Barajas", Email="zbarajas@gmail.com", PhoneNumber=3132256890, Role='P'},
+            new User {FirstName="Vince", LastName="Smith", Email="vsmith@gmail.com", PhoneNumber=3132256890, Role='P'},
             new User {FirstName="Devin", LastName="Marsh", Email="dmarsh@yahoo.com", PhoneNumber=3135540955, Role='P'},
             new User {FirstName="Linda", LastName="Franklin", Email="lfranklin@gmail.com", PhoneNumber=3139953596, Role='P'},
             new User {FirstName="Christina", LastName="Placebo", Email="cplacebo@yahoo.com", PhoneNumber=3139619987, Role='P'},
             new User {FirstName="Spencer", LastName="Sterling", Email="ssterling@dmc.net", PhoneNumber=3138412005, Role='P'},
-            new User {FirstName="Anthony", LastName="Filibustder", Email="afilibuster@yahoo.com", PhoneNumber=3139612713, Role='P' },
+            new User {FirstName="Anthony", LastName="Abreu", Email="aabreu@yahoo.com", PhoneNumber=3139612713, Role='P' },
             new User {FirstName="John", LastName="Johnson", Email="jjohnson@gmail.com", PhoneNumber=3139612713, Role='P' },   
             new User {FirstName="Jason", LastName="Langster", Email="jlangster@yahoo.com", PhoneNumber=3139612713, Role='P' }, 
             new User {FirstName="Mark", LastName="Jensen", Email="markjenses@tds.net", PhoneNumber=2696016251, Role='P' },
