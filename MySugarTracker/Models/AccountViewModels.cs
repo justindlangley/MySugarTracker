@@ -64,6 +64,15 @@ namespace MySugarTracker.Models
 
     public class RegisterViewModel
     {
+
+        [StringLength(50, ErrorMessage = "First name cannot be longer than 50 characters")]
+        [Display(Name = "First Name")]
+        public string FirstName { get; set; }
+
+        [StringLength(50, ErrorMessage = "Last name cannot be longer than 50 characters")]
+        [Display(Name = "Last Name")]
+        public string LastName { get; set; }
+
         [Required]
         [EmailAddress]
         [Display(Name = "Email")]
@@ -79,6 +88,10 @@ namespace MySugarTracker.Models
         [Display(Name = "Confirm password")]
         [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
         public string ConfirmPassword { get; set; }
+
+        [Required]
+        public string Role { get; set; }
+
     }
 
     public class ResetPasswordViewModel

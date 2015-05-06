@@ -12,17 +12,17 @@ namespace MySugarTracker.Models
     {
 
  
-        [ForeignKey("User")]
-        public int UserID { get; set; }
-        public virtual User User { get; set; }
+        //[ForeignKey("User")]
+        //public int UserID { get; set; }
+        //public virtual User User { get; set; }
 
-        [ForeignKey("User")]
-        public int DrID { get; set; }
-        public virtual User DrUser { set; get; }
+        //[ForeignKey("User")]
+        //public int DrID { get; set; }
+        //public virtual User DrUser { set; get; }
     
-        [ForeignKey("User")]
-        public int CaseManagerID {get; set;}
-        public virtual User CaseManagerUser { get; set; }
+        //[ForeignKey("User")]
+        //public int CaseManagerID {get; set;}
+        //public virtual User CaseManagerUser { get; set; }
 
 
         [Required, DataType(DataType.Date)]
@@ -70,7 +70,8 @@ namespace MySugarTracker.Models
                 return (WeightInPounds * 703) / (HeightInInches * HeightInInches);
             }
         }
-        
+        public string UserID { get; set; }
+        public virtual ApplicationUser ApplicationUser { get; set; }
         public virtual ICollection<PatientSugarData> PatientSugarData { get; set; }
     }
 }
