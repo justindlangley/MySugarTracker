@@ -35,6 +35,6 @@ namespace MySugarTracker.Models
             get { return FirstName + " " + LastName; }
         }
 
-        //public virtual ICollection<Patient> Patient { get; set; }
+        
     }
 }

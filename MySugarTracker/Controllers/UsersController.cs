@@ -6,14 +6,13 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
-using MySugarTracker.DAL;
 using MySugarTracker.Models;
 
 namespace MySugarTracker.Controllers
 {
     public class UsersController : Controller
     {
-        private SugarContext db = new SugarContext();
+        private ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: Users
         public ActionResult Index()
