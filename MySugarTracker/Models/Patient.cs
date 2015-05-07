@@ -11,20 +11,6 @@ namespace MySugarTracker.Models
     public class Patient 
     {
 
- 
-        //[ForeignKey("User")]
-        //public int UserID { get; set; }
-        //public virtual User User { get; set; }
-
-        //[ForeignKey("User")]
-        //public int DrID { get; set; }
-        //public virtual User DrUser { set; get; }
-    
-        //[ForeignKey("User")]
-        //public int CaseManagerID {get; set;}
-        //public virtual User CaseManagerUser { get; set; }
-
-
         [Required, DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         public DateTime BirthDate { get; set; }
@@ -55,8 +41,14 @@ namespace MySugarTracker.Models
         public DateTime TestTime4 { get; set; }
 
         
-
-        //public int Age { get { return DateTime.Now.Year - BirthDate; } set; }
+        DateTime today = DateTime.Today;
+        public TimeSpan Age 
+        { 
+            get 
+                            { 
+                            return (today - BirthDate); 
+                            }
+        }
 
         //Use Height and weight to calculate BMI
         [Required]
@@ -70,6 +62,7 @@ namespace MySugarTracker.Models
                 return (WeightInPounds * 703) / (HeightInInches * HeightInInches);
             }
         }
+        [Key]
         public string UserID { get; set; }
         public virtual ApplicationUser ApplicationUser { get; set; }
         public virtual ICollection<PatientSugarData> PatientSugarData { get; set; }
