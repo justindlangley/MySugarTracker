@@ -13,28 +13,38 @@ namespace MySugarTracker.Models
 
         [Required, DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
+        [Display(Name="Birth Date")]
         public DateTime BirthDate { get; set; }
 
         [Required]
+        [Display(Name="History of Cardiovascular disease?")]
         public bool? CardioVascularDisease { get; set; }
         [Required]
+        [Display(Name = "History of High Blood Pressure?")]
         public bool? HighBloodPressure { get; set; }
         [Required]
+        [Display(Name = "History of Thyroid disease?")]
         public bool? ThyroidDisease { get; set; }
         [Required]
+        [Display(Name = "Female?")]
         public bool? Female { get; set; }
         [Required]
+        [Display(Name = "Pregnant?")]
         public bool? Pregnant { get; set; }
 
         //Does patient prefer to receive notifications and reminders from email or SMS, or both.
         [Required]
+        [Display(Name = "Prefer Email Notification?")]
         public bool EmailPref { get; set; }
         [Required]
+        [Display(Name = "Prefer Text Message Notification?")]
         public bool SMSpref { get; set; }
-
+        [Display(Name = "Low Blood Sugar Alert Level")]
         public int LowAlert { get; set; }
+        [Display(Name = "High Blood Sugar Alert Level")]
         public int HighAlert { get; set; }
 
+        [Display(Name = "")]
         public DateTime TestTime1 { get; set; }
         public DateTime TestTime2 { get; set; }
         public DateTime TestTime3 { get; set; }
@@ -52,9 +62,12 @@ namespace MySugarTracker.Models
 
         //Use Height and weight to calculate BMI
         [Required]
+        [Display(Name = "Weight in Pounds")]
         public int WeightInPounds { get; set; }
         [Required]
+        [Display(Name = "Height in Inches")]
         public int HeightInInches { get; set; }
+        [Display(Name = "Body Mass Index (BMI)")]
         public int BMI
         {
             get

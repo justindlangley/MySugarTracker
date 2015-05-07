@@ -35,28 +35,28 @@ namespace MySugarTracker.Controllers
             return View(patient);
         }
 
-        // GET: Patients/Create
-        public ActionResult Create()
-        {
-            return View();
-        }
+        //// GET: Patients/Create
+        //public ActionResult Create()
+        //{
+        //    return View();
+        //}
 
         // POST: Patients/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "UserID,BirthDate,CardioVascularDisease,HighBloodPressure,ThyroidDisease,Female,Pregnant,EmailPref,SMSpref,LowAlert,HighAlert,TestTime1,TestTime2,TestTime3,TestTime4,WeightInPounds,HeightInInches")] Patient patient)
-        {
-            if (ModelState.IsValid)
-            {
-                db.Patients.Add(patient);
-                db.SaveChanges();
-                return RedirectToAction("Index");
-            }
+        //[HttpPost]
+        //[ValidateAntiForgeryToken]
+        //public ActionResult Create([Bind(Include = "UserID,BirthDate,CardioVascularDisease,HighBloodPressure,ThyroidDisease,Female,Pregnant,EmailPref,SMSpref,LowAlert,HighAlert,TestTime1,TestTime2,TestTime3,TestTime4,WeightInPounds,HeightInInches")] Patient patient)
+        //{
+        //    if (ModelState.IsValid)
+        //    {
+        //        db.Patients.Add(patient);
+        //        db.SaveChanges();
+        //        return RedirectToAction("Index");
+        //    }
 
-            return View(patient);
-        }
+        //    return View(patient);
+        //}
 
         // GET: Patients/Edit/5
         public ActionResult Edit(string id)
