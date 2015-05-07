@@ -1,0 +1,146 @@
+﻿@model MySugarTracker.Models.Patient
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Patient</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.BirthDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BirthDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CardioVascularDisease)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CardioVascularDisease)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HighBloodPressure)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HighBloodPressure)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ThyroidDisease)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ThyroidDisease)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Female)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Female)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Pregnant)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Pregnant)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EmailPref)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EmailPref)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SMSpref)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SMSpref)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LowAlert)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LowAlert)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HighAlert)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HighAlert)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TestTime1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TestTime1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TestTime2)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TestTime2)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TestTime3)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TestTime3)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TestTime4)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TestTime4)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.WeightInPounds)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.WeightInPounds)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HeightInInches)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HeightInInches)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.UserID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

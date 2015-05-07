@@ -1,0 +1,123 @@
+﻿@model IEnumerable<MySugarTracker.Models.Patient>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.BirthDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CardioVascularDisease)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.HighBloodPressure)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ThyroidDisease)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Female)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Pregnant)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.EmailPref)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SMSpref)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LowAlert)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.HighAlert)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TestTime1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TestTime2)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TestTime3)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TestTime4)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.WeightInPounds)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.HeightInInches)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.BirthDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CardioVascularDisease)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.HighBloodPressure)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ThyroidDisease)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Female)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Pregnant)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EmailPref)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SMSpref)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LowAlert)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.HighAlert)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TestTime1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TestTime2)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TestTime3)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TestTime4)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.WeightInPounds)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.HeightInInches)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.UserID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.UserID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.UserID })
+        </td>
+    </tr>
+}
+
+</table>

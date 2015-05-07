@@ -59,5 +59,7 @@ namespace MySugarTracker.Models
         {
             return new ApplicationDbContext();
         }
+
+        public System.Data.Entity.DbSet<MySugarTracker.Models.Patient> Patients { get; set; }
     }
 }
