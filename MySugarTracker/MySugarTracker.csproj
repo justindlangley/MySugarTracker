@@ -209,6 +209,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\PatientsController.cs" />
+    <Compile Include="Controllers\NavigationController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -223,6 +224,10 @@
     <Compile Include="Migrations\201505061830558_third.cs" />
     <Compile Include="Migrations\201505061830558_third.Designer.cs">
       <DependentUpon>201505061830558_third.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201505071503105_next.cs" />
+    <Compile Include="Migrations\201505071503105_next.Designer.cs">
+      <DependentUpon>201505071503105_next.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -338,6 +343,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="DAL\" />
+    <Folder Include="Views\Redirect\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -355,6 +361,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201505061830558_third.resx">
       <DependentUpon>201505061830558_third.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201505071503105_next.resx">
+      <DependentUpon>201505071503105_next.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
