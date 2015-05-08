@@ -2008,7 +2008,7 @@ textarea.input-lg {
   white-space: nowrap;
   vertical-align: middle;
   cursor: pointer;
-  border: 1px solid transparent;
+  border: 2px solid black;
   border-radius: 4px;
   -webkit-user-select: none;
      -moz-user-select: none;
@@ -4501,32 +4501,32 @@ textarea.input-group-sm > .input-group-btn > .btn {
 }
 
 .navbar-inverse {
-  background-color: #222222;
-  border-color: #080808;
+  background-color: #54b8e3;
+  border-color: #1688c3;
 }
 
 .navbar-inverse .navbar-brand {
-  color: #999999;
+  color: #007bc9;
 }
 
 .navbar-inverse .navbar-brand:hover,
 .navbar-inverse .navbar-brand:focus {
-  color: #ffffff;
-  background-color: transparent;
+  color: #392f8a;
+  background-color: #039dde;
 }
 
 .navbar-inverse .navbar-text {
-  color: #999999;
+  color: #0b0855;
 }
 
 .navbar-inverse .navbar-nav > li > a {
-  color: #999999;
+  color: #392f8a;
 }
 
 .navbar-inverse .navbar-nav > li > a:hover,
 .navbar-inverse .navbar-nav > li > a:focus {
   color: #ffffff;
-  background-color: transparent;
+  background-color: #039dde;
 }
 
 .navbar-inverse .navbar-nav > .active > a,
