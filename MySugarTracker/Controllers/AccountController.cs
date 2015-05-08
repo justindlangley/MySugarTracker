@@ -81,6 +81,7 @@ namespace MySugarTracker.Controllers
             switch (result)
             {
                 case SignInStatus.Success:
+                    returnUrl = "/Navigation/RoleSelect";   
                     return RedirectToLocal(returnUrl);
                 case SignInStatus.LockedOut:
                     return View("Lockout");
