@@ -225,11 +225,9 @@
     <Compile Include="Migrations\201505061830558_third.Designer.cs">
       <DependentUpon>201505061830558_third.cs</DependentUpon>
     </Compile>
-
     <Compile Include="Migrations\201505071413081_fourth.cs" />
     <Compile Include="Migrations\201505071413081_fourth.Designer.cs">
       <DependentUpon>201505071413081_fourth.cs</DependentUpon>
-
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -237,6 +235,7 @@
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Patient.cs" />
     <Compile Include="Models\PatientSugarData.cs" />
+    <Compile Include="Models\SugarGraph.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -364,10 +363,8 @@
     <EmbeddedResource Include="Migrations\201505061830558_third.resx">
       <DependentUpon>201505061830558_third.cs</DependentUpon>
     </EmbeddedResource>
-
     <EmbeddedResource Include="Migrations\201505071413081_fourth.resx">
       <DependentUpon>201505071413081_fourth.cs</DependentUpon>
-
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
