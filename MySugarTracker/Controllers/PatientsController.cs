@@ -7,6 +7,11 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using MySugarTracker.Models;
+using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.Owin;
+using Microsoft.Owin.Security;
+using Microsoft.AspNet.Identity.EntityFramework;
+using MySugarTracker.ViewModels;
 
 namespace MySugarTracker.Controllers
 {
@@ -16,9 +21,39 @@ namespace MySugarTracker.Controllers
 
         // GET: Patients
         public ActionResult Index()
-        {
-            return View(db.Patients.ToList());
+        { 
+                    var myId = User.Identity.GetUserId();
+
+            var patient = (from u in db.Users
+                           join p in db.Patients on u.Id equals p.UserID
+                           where u.Role == "P" && u.Id == myId
+                           select new PatientUser
+                           {
+                               FirstName = u.FirstName,
+                               LastName = u.LastName,
+                               PhoneNumber = u.PhoneNumber,
+                               Email = u.Email,
+                               BirthDate = p.BirthDate,
+                               CardioVascularDisease = p.CardioVascularDisease,
+                               HighBloodPressure = p.HighBloodPressure,
+                               Female = p.Female,
+                               ThyroidDisease = p.ThyroidDisease,
+                               HeightInInches = p.HeightInInches,
+                               WeightInPounds = p.WeightInPounds,
+                               Pregnant = p.Pregnant,
+                               SMSPref = p.SMSpref,
+                               EmailPref = p.EmailPref,
+                               HighAlert = p.HighAlert,
+                               LowAlert = p.LowAlert,
+                               TestTime1 = p.TestTime1,
+                               TestTime2 = p.TestTime2,
+                               TestTime3 = p.TestTime3,
+                               TestTime4 = p.TestTime4
+                           }).SingleOrDefault();
+            return View(patient);
         }
+
+            
 
         // GET: Patients/Details/5
         public ActionResult Details(string id)
