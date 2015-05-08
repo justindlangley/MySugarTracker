@@ -4,9 +4,15 @@ using System.Data;
 using System.Data.Entity;
 using System.Linq;
 using System.Net;
+using System.Security.Claims;
 using System.Web;
 using System.Web.Mvc;
 using MySugarTracker.Models;
+using Microsoft.AspNet.Identity.EntityFramework;
+using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.Owin;
+using Microsoft.Owin.Security;
+
 
 namespace MySugarTracker.Controllers
 {
@@ -46,10 +52,13 @@ namespace MySugarTracker.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "PatientSugarDataID,UserID,patientSugarReading,dateTime")] PatientSugarData patientSugarData)
+  //      public ActionResult Create([Bind(Include = "PatientSugarDataID,UserID,patientSugarReading,dateTime")] PatientSugarData patientSugarData)
+        public ActionResult Create([Bind(Include = "PatientSugarDataID,patientSugarReading,dateTime")] PatientSugarData patientSugarData)
         {
             if (ModelState.IsValid)
             {
+                var MyId = User.Identity.GetUserId();
+                patientSugarData.UserID = MyId;
                 db.PatientSugarDatas.Add(patientSugarData);
                 db.SaveChanges();
                 return RedirectToAction("Index");
