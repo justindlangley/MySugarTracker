@@ -210,6 +210,7 @@
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\PatientsController.cs" />
     <Compile Include="Controllers\NavigationController.cs" />
+    <Compile Include="Controllers\PatientSugarDatasController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -342,6 +343,11 @@
     <Content Include="Views\Patients\Details.cshtml" />
     <Content Include="Views\Patients\Edit.cshtml" />
     <Content Include="Views\Patients\Index.cshtml" />
+    <Content Include="Views\PatientSugarDatas\Create.cshtml" />
+    <Content Include="Views\PatientSugarDatas\Delete.cshtml" />
+    <Content Include="Views\PatientSugarDatas\Details.cshtml" />
+    <Content Include="Views\PatientSugarDatas\Edit.cshtml" />
+    <Content Include="Views\PatientSugarDatas\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

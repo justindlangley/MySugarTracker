@@ -1,0 +1,45 @@
+﻿@model IEnumerable<MySugarTracker.Models.PatientSugarData>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.UserID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.patientSugarReading)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.dateTime)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.UserID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.patientSugarReading)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.dateTime)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.PatientSugarDataID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.PatientSugarDataID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.PatientSugarDataID })
+        </td>
+    </tr>
+}
+
+</table>
