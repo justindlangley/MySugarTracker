@@ -7,13 +7,13 @@ namespace MySugarTracker.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class fourth : IMigrationMetadata
+    public sealed partial class sugardata : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(fourth));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(sugardata));
         
         string IMigrationMetadata.Id
         {
-            get { return "201505071413081_fourth"; }
+            get { return "201505082047138_sugardata"; }
         }
         
         string IMigrationMetadata.Source
