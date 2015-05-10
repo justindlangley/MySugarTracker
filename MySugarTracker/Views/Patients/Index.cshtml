@@ -10,19 +10,24 @@
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
-<table class="table">
+
+
+<table>
     <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.FirstName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LastName)
+        </th>
         <th>
             @Html.DisplayNameFor(model => model.BirthDate)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.CardioVascularDisease)
+            @Html.DisplayNameFor(model => model.WeightInPounds)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.HighBloodPressure)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.ThyroidDisease)
+            @Html.DisplayNameFor(model => model.HeightInInches)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Female)
@@ -36,6 +41,66 @@
         <th>
             @Html.DisplayNameFor(model => model.SMSPref)
         </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PhoneNumber)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Email)
+        </th>
+    </tr>
+
+    <tr>
+        <td>
+            @Html.DisplayFor(model => model.FirstName)
+        </td>
+        <td>
+            @Html.DisplayFor(model => model.LastName)
+        </td>
+        <td>
+            @Html.DisplayFor(model => model.BirthDate)
+        </td>
+        <td>
+            @Html.DisplayFor(model => model.WeightInPounds)
+        </td>
+        <td>
+            @Html.DisplayFor(model => model.HeightInInches)
+        </td>
+        <td>
+            @Html.DisplayFor(model => model.Female)
+        </td>
+        <td>
+            @Html.DisplayFor(model => model.Pregnant)
+        </td>
+        <td>
+            @Html.DisplayFor(model => model.EmailPref)
+        </td>
+        <td>
+            @Html.DisplayFor(model => model.SMSPref)
+        </td>
+        <td>
+            @Html.DisplayFor(model => model.PhoneNumber)
+        </td>
+        <td>
+            @Html.DisplayFor(model => model.Email)
+        </td>
+        
+    </tr>
+
+</table>
+
+<h2>Patient Medical History</h2>
+<table class="table">
+    <tr>
+        
+        <th>
+            @Html.DisplayNameFor(model => model.CardioVascularDisease)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.HighBloodPressure)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ThyroidDisease)
+        </th>       
         <th>
             @Html.DisplayNameFor(model => model.LowAlert)
         </th>
@@ -54,20 +119,13 @@
         <th>
             @Html.DisplayNameFor(model => model.TestTime4)
         </th>
-        <th>
-            @Html.DisplayNameFor(model => model.WeightInPounds)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.HeightInInches)
-        </th>
+
         <th></th>
     </tr>
 
 @*@foreach (var item in Model) {*@
     <tr>
-        <td>
-            @Html.DisplayFor(model => model.BirthDate)
-        </td>
+
         <td>
             @Html.DisplayFor(model => model.CardioVascularDisease)
         </td>
@@ -77,18 +135,7 @@
         <td>
             @Html.DisplayFor(model => model.ThyroidDisease)
         </td>
-        <td>
-            @Html.DisplayFor(model => model.Female)
-        </td>
-        <td>
-            @Html.DisplayFor(model => model.Pregnant)
-        </td>
-        <td>
-            @Html.DisplayFor(model => model.EmailPref)
-        </td>
-        <td>
-            @Html.DisplayFor(model => model.SMSPref)
-        </td>
+
         <td>
             @Html.DisplayFor(model => model.LowAlert)
         </td>
@@ -107,12 +154,7 @@
         <td>
             @Html.DisplayFor(model => model.TestTime4)
         </td>
-        <td>
-            @Html.DisplayFor(model => model.WeightInPounds)
-        </td>
-        <td>
-            @Html.DisplayFor(model => model.HeightInInches)
-        </td>
+
         @*<td>
             @Html.ActionLink("Edit", "Edit", new { id=item.UserID }) |
             @Html.ActionLink("Details", "Details", new { id=item.UserID }) |
