@@ -226,17 +226,9 @@
     <Compile Include="Migrations\201505061830558_third.Designer.cs">
       <DependentUpon>201505061830558_third.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201505082047138_sugardata.cs" />
-    <Compile Include="Migrations\201505082047138_sugardata.Designer.cs">
-      <DependentUpon>201505082047138_sugardata.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201505082057214_sugarKey.cs" />
-    <Compile Include="Migrations\201505082057214_sugarKey.Designer.cs">
-      <DependentUpon>201505082057214_sugarKey.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201505111305183_monday.cs" />
-    <Compile Include="Migrations\201505111305183_monday.Designer.cs">
-      <DependentUpon>201505111305183_monday.cs</DependentUpon>
+    <Compile Include="Migrations\201505111413426_ThirdAttempt.cs" />
+    <Compile Include="Migrations\201505111413426_ThirdAttempt.Designer.cs">
+      <DependentUpon>201505111413426_ThirdAttempt.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -379,14 +371,8 @@
     <EmbeddedResource Include="Migrations\201505061830558_third.resx">
       <DependentUpon>201505061830558_third.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201505082047138_sugardata.resx">
-      <DependentUpon>201505082047138_sugardata.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201505082057214_sugarKey.resx">
-      <DependentUpon>201505082057214_sugarKey.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201505111305183_monday.resx">
-      <DependentUpon>201505111305183_monday.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201505111413426_ThirdAttempt.resx">
+      <DependentUpon>201505111413426_ThirdAttempt.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
