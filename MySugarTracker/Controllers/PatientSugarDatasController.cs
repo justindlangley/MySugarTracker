@@ -61,6 +61,29 @@ namespace MySugarTracker.Controllers
                 patientSugarData.UserID = MyId;
                 db.PatientSugarDatas.Add(patientSugarData);
                 db.SaveChanges();
+                
+                var PatientCompare= (from u in db.Patients where u.UserID == MyId select new Patient
+                {
+                    HighAlert= u.HighAlert,
+                    LowAlert= u.LowAlert,
+                  
+                }).Single() ;
+
+                if  (patientSugarData.patientSugarReading > PatientCompare.HighAlert)
+                {
+                    var MyMessage = new TextMsg();
+                    MyMessage.SendMessage("Patient Bloodsugar above high limit", "+12483963923");
+                }
+
+                if (patientSugarData.patientSugarReading < PatientCompare.LowAlert)
+                {
+                    var MyMessage = new TextMsg();
+                    MyMessage.SendMessage("Patient Bloodsugar lower than lower limit", "+12483963923");
+                }
+                    
+               
+                                    
+
                 return RedirectToAction("Index");
             }
 
