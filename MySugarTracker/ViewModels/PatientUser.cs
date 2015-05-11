@@ -18,7 +18,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace MySugarTracker.ViewModels
 {
-    public class PatientUser : Controller
+    public class PatientUser 
 
     {
         [Display(Name="First Name")]
