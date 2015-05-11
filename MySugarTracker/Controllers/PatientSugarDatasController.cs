@@ -12,6 +12,7 @@ using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
+using MySugarTracker.ViewModels;
 
 
 namespace MySugarTracker.Controllers
@@ -62,7 +63,7 @@ namespace MySugarTracker.Controllers
                 db.PatientSugarDatas.Add(patientSugarData);
                 db.SaveChanges();
                 
-                var PatientCompare= (from u in db.Patients where u.UserID == MyId select new Patient
+                var PatientCompare= (from u in db.Patients where u.UserID == MyId select new PatientUser
                 {
                     HighAlert= u.HighAlert,
                     LowAlert= u.LowAlert,
@@ -72,13 +73,13 @@ namespace MySugarTracker.Controllers
                 if  (patientSugarData.patientSugarReading > PatientCompare.HighAlert)
                 {
                     var MyMessage = new TextMsg();
-                    MyMessage.SendMessage("Patient Bloodsugar above high limit", "+12483963923");
+                    MyMessage.SendMessage("Patient Bloodsugar above high limit", "2483963923");
                 }
 
                 if (patientSugarData.patientSugarReading < PatientCompare.LowAlert)
                 {
                     var MyMessage = new TextMsg();
-                    MyMessage.SendMessage("Patient Bloodsugar lower than lower limit", "+12483963923");
+                    MyMessage.SendMessage("Patient Bloodsugar lower than lower limit", "2483963923");
                 }
                     
                
