@@ -235,6 +235,10 @@
     <Compile Include="Migrations\201505082057214_sugarKey.Designer.cs">
       <DependentUpon>201505082057214_sugarKey.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201505111537120_mon.cs" />
+    <Compile Include="Migrations\201505111537120_mon.Designer.cs">
+      <DependentUpon>201505111537120_mon.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -245,6 +249,7 @@
     <Compile Include="Models\SugarGraph.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
+    <Compile Include="ViewModels\DoctorPatient.cs" />
     <Compile Include="ViewModels\DoctorUser.cs" />
     <Compile Include="ViewModels\PatientUser.cs" />
   </ItemGroup>
@@ -387,6 +392,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201505082057214_sugarKey.resx">
       <DependentUpon>201505082057214_sugarKey.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201505111537120_mon.resx">
+      <DependentUpon>201505111537120_mon.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
