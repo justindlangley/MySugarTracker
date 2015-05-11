@@ -33,7 +33,7 @@ namespace MySugarTracker.Controllers
                     returnUrl = "/Patients/Index";
                     break;
                 case "D":
-                    returnUrl = "/Doctors/Index";
+                    returnUrl = "/Doctor/Index";
                     break;
                 case "C":
                     returnUrl = "/CaseManagers/Index";

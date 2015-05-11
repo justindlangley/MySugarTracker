@@ -63,5 +63,6 @@ namespace MySugarTracker.Models
         public System.Data.Entity.DbSet<MySugarTracker.Models.Patient> Patients { get; set; }
 
         public System.Data.Entity.DbSet<MySugarTracker.Models.PatientSugarData> PatientSugarDatas { get; set; }
+
     }
 }

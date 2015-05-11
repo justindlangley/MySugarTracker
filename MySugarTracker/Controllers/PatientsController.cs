@@ -52,6 +52,20 @@ namespace MySugarTracker.Controllers
                                TestTime3 = p.TestTime3,
                                TestTime4 = p.TestTime4
                            }).SingleOrDefault();
+
+            // get last six weeks data for graph
+            var sixWeeksAgo = new DateTime();
+            sixWeeksAgo = DateTime.Today.AddDays(-42);
+            var graphData = from d in db.PatientSugarDatas select d;
+            graphData = graphData.Where((d => d.UserID == myId && d.dateTime >= sixWeeksAgo));
+            graphData = graphData.OrderBy(d => d.dateTime);
+            var xdata = graphData.Select(x => x.dateTime).ToArray();
+            var ydata = graphData.AsEnumerable().Select(y => new object[] { y.patientSugarReading }).ToArray();
+
+            var Graph = new SugarGraph();
+            var ViewGraph = Graph.CreateSugarChart(xdata, ydata, patient.LowAlert, patient.HighAlert);
+            patient.MyChart = ViewGraph;
+
             return View(patient);
         }
 
