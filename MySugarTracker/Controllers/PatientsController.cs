@@ -64,6 +64,7 @@ namespace MySugarTracker.Controllers
 
             var Graph = new SugarGraph();
             var ViewGraph = Graph.CreateSugarChart(xdata, ydata, patient.LowAlert, patient.HighAlert);
+            patient.MyChart = ViewGraph;
 
             return View(patient);
         }

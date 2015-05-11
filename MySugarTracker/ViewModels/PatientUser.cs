@@ -6,6 +6,7 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
+using DotNet.Highcharts;
 using MySugarTracker.Models;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
@@ -81,5 +82,7 @@ namespace MySugarTracker.ViewModels
 
         [Display(Name = "Throid Disease?")]
         public bool? ThyroidDisease { get; set; }
+
+        public Highcharts MyChart { get; set; }
     }
 }
