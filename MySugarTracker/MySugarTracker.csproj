@@ -234,6 +234,10 @@
     <Compile Include="Migrations\201505082057214_sugarKey.Designer.cs">
       <DependentUpon>201505082057214_sugarKey.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201505111305183_monday.cs" />
+    <Compile Include="Migrations\201505111305183_monday.Designer.cs">
+      <DependentUpon>201505111305183_monday.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -380,6 +384,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201505082057214_sugarKey.resx">
       <DependentUpon>201505082057214_sugarKey.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201505111305183_monday.resx">
+      <DependentUpon>201505111305183_monday.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
