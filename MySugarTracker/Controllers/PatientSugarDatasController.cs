@@ -59,6 +59,8 @@ namespace MySugarTracker.Controllers
             if (ModelState.IsValid)
             {
                 var MyId = User.Identity.GetUserId();
+                var myManager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(new ApplicationDbContext()));
+                var currentUser = myManager.FindById(MyId);       
                 patientSugarData.UserID = MyId;
                 db.PatientSugarDatas.Add(patientSugarData);
                 db.SaveChanges();
@@ -67,22 +69,18 @@ namespace MySugarTracker.Controllers
                 {
                     HighAlert= u.HighAlert,
                     LowAlert= u.LowAlert,
+                    FirstName= currentUser.FirstName,
+                    LastName= currentUser.LastName,
                   
                 }).Single() ;
 
-                if  (patientSugarData.patientSugarReading > PatientCompare.HighAlert)
+                if (patientSugarData.patientSugarReading > PatientCompare.HighAlert || patientSugarData.patientSugarReading < PatientCompare.LowAlert)
                 {
                     var MyMessage = new TextMsg();
-                    MyMessage.SendMessage("Patient Bloodsugar above high limit", "2483963923");
+                    var AlertMessage = PatientCompare.FirstName + " " + PatientCompare.LastName + " bloodsugar reading of " + patientSugarData.patientSugarReading;
+                    MyMessage.SendMessage(AlertMessage, "2483963923");
+                    MyMessage.SendMessage(AlertMessage, "2696016251");
                 }
-
-                if (patientSugarData.patientSugarReading < PatientCompare.LowAlert)
-                {
-                    var MyMessage = new TextMsg();
-                    MyMessage.SendMessage("Patient Bloodsugar lower than lower limit", "2483963923");
-                }
-                    
-               
                                     
 
                 return RedirectToAction("Index");
