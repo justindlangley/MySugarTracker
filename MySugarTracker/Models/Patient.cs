@@ -77,6 +77,8 @@ namespace MySugarTracker.Models
         }
         [Key]
         public string UserID { get; set; }
+        public string DrID { get; set; }
+        public string CMId { get; set; }
         public virtual ApplicationUser ApplicationUser { get; set; }
         public virtual ICollection<PatientSugarData> PatientSugarData { get; set; }
     }
