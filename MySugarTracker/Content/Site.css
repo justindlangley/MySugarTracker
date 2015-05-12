@@ -24,8 +24,10 @@ textarea {
 }
 
 .jumbotron {
-    color: #0094ff;
-
+    color: white;
+    background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ),  url("https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQcZ-wfEdrV1skg8yjwMmzYAMRmHtfI36IUEeaqvgAh2NhxcwFmaQ");
+    background-repeat:no-repeat;
+    background-size: cover;
 }
 
 .btn-primary{
@@ -33,7 +35,7 @@ textarea {
 }
 
 .navbar-inverse {
-  background-color: #54b8e3;
-  border-color: #1688c3;
+  background-color:#6484eb;
+  border-color: #14587c;
 }
 
