@@ -34,8 +34,8 @@
         <div class="form-group">
             @Html.LabelFor(model => model.CardioVascularDisease, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                <div class="checkbox">
-                    @Html.EditorFor(model => model.CardioVascularDisease)
+                <div >
+                    @Html.CheckBoxFor(model => model.CardioVascularDisease.GetValueOrDefault(), new { @class = "checkbox-inline" })
                     @Html.ValidationMessageFor(model => model.CardioVascularDisease, "", new { @class = "text-danger" })
                 </div>
             </div>

@@ -89,7 +89,7 @@
 </table>
 
 <h2>Patient Medical History</h2>
-<table class="table">
+<table class="table table-bordered">
     <tr>
 
         <th>
@@ -126,13 +126,13 @@
     <tr>
 
         <td>
-            @Html.DisplayFor(model => model.CardioVascularDisease)
+            @Html.DisplayFor(model => model.CardioVascularDisease.Value)
         </td>
         <td>
-            @Html.DisplayFor(model => model.HighBloodPressure)
+            @Html.DisplayFor(model => model.HighBloodPressure.Value)
         </td>
         <td>
-            @Html.DisplayFor(model => model.ThyroidDisease)
+            @Html.DisplayFor(model => model.ThyroidDisease.Value)
         </td>
 
         <td>
