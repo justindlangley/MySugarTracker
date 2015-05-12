@@ -24,7 +24,12 @@ namespace MySugarTracker.Controllers
         // GET: PatientSugarDatas
         public ActionResult Index()
         {
-            return View(db.PatientSugarDatas.ToList());
+            var myId = User.Identity.GetUserId();
+            var sugarData = from s in db.PatientSugarDatas select s;
+            sugarData = sugarData.Where(s => s.UserID == myId );
+            sugarData = sugarData.OrderByDescending(s => s.dateTime);
+            var mySugarList = sugarData.ToList();
+            return View(mySugarList);
         }
 
         // GET: PatientSugarDatas/Details/5
