@@ -10,13 +10,9 @@
            <h2>@Html.DisplayFor(model => model.FirstName) @Html.DisplayFor(model => model.LastName) </h2> 
 
 
-<p>
-    
-    @using (Html.BeginForm("Create", "PatientSugarDatas"))
-    {
-        <button type="submit">Enter Glucose Reading</button>
-    } 
-</p>
+
+   <p><a class="btn btn-default" href="../PatientSugarDatas/Create">Enter Glucose Reading &raquo;</a></p>
+   
 
 
 <table class="table table-bordered">

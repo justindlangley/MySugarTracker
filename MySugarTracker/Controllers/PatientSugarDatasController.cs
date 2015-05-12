@@ -50,6 +50,11 @@ namespace MySugarTracker.Controllers
         // GET: PatientSugarDatas/Create
         public ActionResult Create()
         {
+            var MyId = User.Identity.GetUserId();
+            var myManager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(new ApplicationDbContext()));
+            var currentUser = myManager.FindById(MyId);
+            ViewBag.LastName = currentUser.LastName;
+            ViewBag.FirstName = currentUser.FirstName;
             var sugarData = new PatientSugarData();
             sugarData.dateTime = DateTime.Now;
             return View(sugarData);
