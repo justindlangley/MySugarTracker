@@ -5,7 +5,10 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Patient Profile Information</h2>
+
+    
+           <h2>@Html.DisplayFor(model => model.FirstName) @Html.DisplayFor(model => model.LastName) </h2> 
+
 
 <p>
     @Html.ActionLink("Enter Glucose Reading", "Create", "PatientSugarDatas")
