@@ -119,6 +119,7 @@ namespace MySugarTracker.Controllers
             Patient patview = db.Patients.Find(id);
             ApplicationUser patuser = db.Users.Find(id);
 
+
             if (patview == null)
             {
                 return HttpNotFound();
@@ -161,6 +162,13 @@ namespace MySugarTracker.Controllers
             var ViewGraph = Graph.CreateSugarChart(xdata, ydata, patient.LowAlert, patient.HighAlert);
             patient.MyChart = ViewGraph;
 
+            //if (ModelState.IsValid)
+            //{
+            //    db.Entry(patview).State = EntityState.Modified;
+            //    db.SaveChanges();
+            //    db.Entry(patuser).State = EntityState.Modified;
+            //    db.SaveChanges();
+            //}
             return View(patient);
 
         }
