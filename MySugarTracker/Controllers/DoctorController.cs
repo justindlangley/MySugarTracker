@@ -36,21 +36,21 @@ namespace MySugarTracker.Controllers
                                Email = u.Email
                            }).SingleOrDefault();
 
-            return View(doctor);
-            var myPatients = from p in db.Patients
+            //return View(doctor);
+            doctor.PatientList = (from p in db.Patients
                              where p.DrID == myId
                              // now do the join
                              join u in db.Users on p.UserID equals u.Id
                              where u.Role == "P"
-                             select new DoctorPatient 
+                                  select new PatientUser
                              {
                                  FirstName = u.FirstName,
                                  LastName = u.LastName,
                                  PhoneNumber = u.PhoneNumber,
                                  Email = u.Email
-                             };
+                             }).ToList();
 
-            return View(myPatients);
+            return View(doctor);
         }
 
         // GET: Doctor/Details/5

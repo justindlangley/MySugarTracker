@@ -15,7 +15,7 @@ namespace MySugarTracker.ViewModels
 
         public string Email { get; set; }
 
-        myPatients = new List<PatientUser>();
+        //myPatients = new List<PatientUser>();
 
 
 

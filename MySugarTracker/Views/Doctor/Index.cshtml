@@ -25,6 +25,8 @@
         <th></th>
     </tr>
 
+
+
 @*@foreach (var item in Model) {*@
     <tr>
         <td>
@@ -42,6 +44,19 @@
             @Html.ActionLink("Delete", "Delete", new { id=item.Id })
         </td>*@
     </tr>
+    </table>
+    <table>
+        <tr>
+            <th>
+                Patient List
+            </th>
+        </tr>
+    </table>
+
+        <ul>
+            @Html.DisplayFor(model=> model.PatientList)
+        </ul>
 
 
-</table>
+
+
