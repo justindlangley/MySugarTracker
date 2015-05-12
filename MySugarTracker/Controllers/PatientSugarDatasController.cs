@@ -45,7 +45,9 @@ namespace MySugarTracker.Controllers
         // GET: PatientSugarDatas/Create
         public ActionResult Create()
         {
-            return View();
+            var sugarData = new PatientSugarData();
+            sugarData.dateTime = DateTime.Now;
+            return View(sugarData);
         }
 
         // POST: PatientSugarDatas/Create
