@@ -116,12 +116,53 @@ namespace MySugarTracker.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Patient patient = db.Patients.Find(id);
-            if (patient == null)
+            Patient patview = db.Patients.Find(id);
+            ApplicationUser patuser = db.Users.Find(id);
+
+            if (patview == null)
             {
                 return HttpNotFound();
             }
+
+            
+                           var patient = new PatientUser();
+                           
+                               patient.FirstName = patuser.FirstName;
+                               patient.LastName = patuser.LastName;
+                               patient.PhoneNumber = patuser.PhoneNumber;
+                               patient.Email = patuser.Email;                             
+                               patient.BirthDate = patview.BirthDate;
+                               patient.CardioVascularDisease = patview.CardioVascularDisease;
+                               patient.HighBloodPressure = patview.HighBloodPressure;
+                               patient.Female = patview.Female;
+                               patient.ThyroidDisease = patview.ThyroidDisease;
+                               patient.HeightInInches = patview.HeightInInches;
+                               patient.WeightInPounds = patview.WeightInPounds;
+                               patient.Pregnant = patview.Pregnant;
+                               patient.SMSPref = patview.SMSpref;
+                               patient.EmailPref = patview.EmailPref;
+                               patient.HighAlert = patview.HighAlert;
+                               patient.LowAlert = patview.LowAlert;
+                               patient.TestTime1 = patview.TestTime1;
+                               patient.TestTime2 = patview.TestTime2;
+                               patient.TestTime3 = patview.TestTime3;
+                               patient.TestTime4 = patview.TestTime4;
+
+            // get last six weeks data for graph
+            var sixWeeksAgo = new DateTime();
+            sixWeeksAgo = DateTime.Today.AddDays(-42);
+            var graphData = from d in db.PatientSugarDatas select d;
+            graphData = graphData.Where((d => d.UserID == id && d.dateTime >= sixWeeksAgo));
+            graphData = graphData.OrderBy(d => d.dateTime);
+            var xdata = graphData.Select(x => x.dateTime).ToArray();
+            var ydata = graphData.AsEnumerable().Select(y => new object[] { y.patientSugarReading }).ToArray();
+
+            var Graph = new SugarGraph();
+            var ViewGraph = Graph.CreateSugarChart(xdata, ydata, patient.LowAlert, patient.HighAlert);
+            patient.MyChart = ViewGraph;
+
             return View(patient);
+
         }
 
         // POST: Patients/Edit/5

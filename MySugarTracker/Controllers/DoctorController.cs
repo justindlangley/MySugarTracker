@@ -26,7 +26,6 @@ namespace MySugarTracker.Controllers
             var myId = User.Identity.GetUserId();
 
             var doctor = (from u in db.Users
-                           //join p in db.Patients on u.Id equals p.UserID
                            where u.Role == "D" && u.Id == myId
                            select new DoctorUser
                            {
@@ -36,7 +35,6 @@ namespace MySugarTracker.Controllers
                                Email = u.Email
                            }).SingleOrDefault();
 
-            //return View(doctor);
             doctor.PatientList = (from p in db.Patients
                              where p.DrID == myId
                              // now do the join
@@ -47,7 +45,8 @@ namespace MySugarTracker.Controllers
                                  FirstName = u.FirstName,
                                  LastName = u.LastName,
                                  PhoneNumber = u.PhoneNumber,
-                                 Email = u.Email
+                                 Email = u.Email,
+                                 User = u.Id
                              }).ToList();
 
             return View(doctor);

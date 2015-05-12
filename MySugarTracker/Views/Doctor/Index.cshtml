@@ -45,18 +45,29 @@
         </td>*@
     </tr>
     </table>
+
     <table>
+    <tr>
+        <th>
+            Patient List
+        </th>
+        <th></th>
+    </tr>
+    @foreach (var item in Model.PatientList)
+    {
         <tr>
-            <th>
-                Patient List
-            </th>
+            <td>
+                @Html.DisplayFor(model => item.FirstName)
+            </td>
+            <td>
+                @Html.DisplayFor(model => item.LastName)
+            </td>
+            <td>
+                @*@Html.ActionLink("See Patient Record", (model => model.User))*@
+                <a href="/Patients/Edit/@Html.DisplayFor(model => item.User)">See Patient Record</a>
+            </td>
+            
         </tr>
+    }  
     </table>
-
-        <ul>
-            @Html.DisplayFor(model=> model.PatientList)
-        </ul>
-
-
-
-
+    

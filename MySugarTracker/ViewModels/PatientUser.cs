@@ -83,6 +83,8 @@ namespace MySugarTracker.ViewModels
         [Display(Name = "Throid Disease?")]
         public bool? ThyroidDisease { get; set; }
 
+        public string User { get; set; }
+
         public Highcharts MyChart { get; set; }
     }
 }

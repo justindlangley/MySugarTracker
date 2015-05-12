@@ -1,4 +1,4 @@
-﻿@model MySugarTracker.Models.Patient
+﻿@model MySugarTracker.ViewModels.PatientUser
 
 @{
     ViewBag.Title = "Edit";
@@ -15,7 +15,7 @@
         <h4>Patient</h4>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        @Html.HiddenFor(model => model.UserID)
+        @Html.HiddenFor(model => model.User)
 
         <div class="form-group">
             @Html.LabelFor(model => model.BirthDate, htmlAttributes: new { @class = "control-label col-md-2" })
@@ -86,11 +86,11 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.SMSpref, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.SMSPref, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 <div class="checkbox">
-                    @Html.EditorFor(model => model.SMSpref)
-                    @Html.ValidationMessageFor(model => model.SMSpref, "", new { @class = "text-danger" })
+                    @Html.EditorFor(model => model.SMSPref)
+                    @Html.ValidationMessageFor(model => model.SMSPref, "", new { @class = "text-danger" })
                 </div>
             </div>
         </div>
