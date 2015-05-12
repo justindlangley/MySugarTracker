@@ -11,7 +11,11 @@
 
 
 <p>
-    @Html.ActionLink("Enter Glucose Reading", "Create", "PatientSugarDatas")
+    
+    @using (Html.BeginForm("Create", "PatientSugarDatas"))
+    {
+        <button type="submit">Enter Glucose Reading</button>
+    } 
 </p>
 
 
@@ -123,7 +127,6 @@
             @Html.DisplayNameFor(model => model.TestTime4)
         </th>
 
-        <th></th>
     </tr>
 
     <tr>
