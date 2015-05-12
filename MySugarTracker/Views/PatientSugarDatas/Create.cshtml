@@ -1,5 +1,7 @@
 ﻿@model MySugarTracker.Models.PatientSugarData
 
+@Styles.Render("~/dtpicker/css")
+
 @{
     ViewBag.Title = "Create";
 }
@@ -7,21 +9,21 @@
 <h2>Ceate</h2>
 
 
-@using (Html.BeginForm()) 
+@using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-    
+
     <div class="form-horizontal">
         <h4>Glucose Reading</h4>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         @*<div class="form-group">
-        @Html.LabelFor(model => model.UserID, htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
-            @Html.EditorFor(model => model.UserID, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.UserID, "", new { @class = "text-danger" })
-        </div>
-    </div>*@
+                @Html.LabelFor(model => model.UserID, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.UserID, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.UserID, "", new { @class = "text-danger" })
+                </div>
+            </div>*@
 
         <div class="form-group">
             @Html.LabelFor(model => model.patientSugarReading, htmlAttributes: new { @class = "control-label col-md-2" })
@@ -34,16 +36,17 @@
         <div class="form-group">
             @Html.LabelFor(model => model.dateTime, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.dateTime, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.EditorFor(model => model.dateTime, new { htmlAttributes = new { @class = "form-control", id = "dateTime" } })
                 @Html.ValidationMessageFor(model => model.dateTime, "", new { @class = "text-danger" })
-            </div>
-        </div>
 
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Create" class="btn btn-default" />
             </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Create" class="btn btn-default" />
         </div>
+    </div>
     </div>
 }
 
@@ -53,4 +56,10 @@
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
+    @Scripts.Render("~/bundles/jquerydate")
+    <script>
+        jQuery('#dateTime').datetimepicker();
+    </script>
 }
+
+
