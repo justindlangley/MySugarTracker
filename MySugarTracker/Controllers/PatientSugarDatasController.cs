@@ -89,7 +89,7 @@ namespace MySugarTracker.Controllers
                 if (patientSugarData.patientSugarReading > PatientCompare.HighAlert || patientSugarData.patientSugarReading < PatientCompare.LowAlert)
                 {
                     var MyMessage = new TextMsg();
-                    var AlertMessage = PatientCompare.FirstName + " " + PatientCompare.LastName + " bloodsugar reading of " + patientSugarData.patientSugarReading;
+                    var AlertMessage = "Patient " + PatientCompare.FirstName + " " + PatientCompare.LastName + " had a bloodsugar reading of " + patientSugarData.patientSugarReading;
                     MyMessage.SendMessage(AlertMessage, "2483963923");
                     MyMessage.SendMessage(AlertMessage, "2696016251");
                 }
