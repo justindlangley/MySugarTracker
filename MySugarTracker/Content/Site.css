@@ -38,4 +38,13 @@ textarea {
   background-color:#6484eb;
   border-color: #14587c;
 }
+.navbar-brand{
+    color:black
 
+}
+.btn-default{
+    font-size:15px;
+    border-width:4px;
+    border-color:#05104f;
+
+}

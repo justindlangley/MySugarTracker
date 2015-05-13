@@ -2050,8 +2050,8 @@ fieldset[disabled] .btn {
 
 .btn-default {
   color: #333333;
-  background-color: #ffffff;
-  border-color: #cccccc;
+  background-color: #cccccc;
+  border-color:#06486f;
 }
 
 .btn-default:hover,
@@ -4194,7 +4194,7 @@ textarea.input-group-sm > .input-group-btn > .btn {
 .navbar-brand {
   float: left;
   padding: 15px 15px;
-  font-size: 18px;
+  font-size: 22px;
   line-height: 20px;
 }
 
