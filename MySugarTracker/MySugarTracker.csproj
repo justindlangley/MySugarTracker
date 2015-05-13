@@ -208,6 +208,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\CaseManagerController.cs" />
     <Compile Include="Controllers\DoctorController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -247,6 +248,7 @@
     <Compile Include="Models\SugarGraph.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
+    <Compile Include="ViewModels\CaseManagerUser.cs" />
     <Compile Include="ViewModels\DoctorPatient.cs" />
     <Compile Include="ViewModels\DoctorUser.cs" />
     <Compile Include="ViewModels\PatientUser.cs" />
@@ -365,6 +367,11 @@
     <Content Include="Views\Doctor\Details.cshtml" />
     <Content Include="Views\Doctor\Edit.cshtml" />
     <Content Include="Views\Doctor\Index.cshtml" />
+    <Content Include="Views\CaseManager\Create.cshtml" />
+    <Content Include="Views\CaseManager\Delete.cshtml" />
+    <Content Include="Views\CaseManager\Details.cshtml" />
+    <Content Include="Views\CaseManager\Edit.cshtml" />
+    <Content Include="Views\CaseManager\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
