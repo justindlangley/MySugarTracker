@@ -14,11 +14,14 @@ namespace MySugarTracker.Models
     {
         public Highcharts CreateSugarChart(DateTime[] xdata, object[][] ydata, int lowBand, int highBand)
         {
+            
             var xdataString = new string[xdata.Count()];
             for (int i = 0; i < xdata.Count(); i++)
             {
-                xdataString[i] = xdata[i].ToLongDateString();
+                xdataString[i] = xdata[i].ToShortDateString();
             }
+
+            var myTitle = "Glucose Level From " + xdata[0].ToShortDateString() + " To " + xdata[xdata.Count()-1].ToShortDateString();
 
             var plotBand = new YAxisPlotBands();
             plotBand.Color = System.Drawing.Color.LightGreen;
@@ -32,11 +35,16 @@ namespace MySugarTracker.Models
             yAxis.Title = yTitle;
 
             var chart = new Highcharts("chart");
-            chart.InitChart(new Chart { DefaultSeriesType = ChartTypes.Line });
-            chart.SetTitle(new Title { Text = "Glucose Level" });
-            chart.SetXAxis(new XAxis { Categories = xdataString });
+            chart.InitChart(new Chart { DefaultSeriesType = ChartTypes.Line, BorderWidth = 2, BorderRadius = 20 });
+            chart.SetTitle(new Title { Text = myTitle });
+            
+            var xAxis = new XAxis();
+            xAxis.TickInterval = 4;
+            xAxis.Categories = xdataString;
+            chart.SetXAxis(xAxis);
+
             chart.SetYAxis(yAxis);
-            chart.SetSeries(new[] { new Series { Name = "Glucose Level", Data = new Data(ydata) } });
+            chart.SetSeries(new[] { new Series { Name = "Glucose Reading", Data = new Data(ydata), } });
 
             return chart;
         }
