@@ -53,6 +53,14 @@ namespace MySugarTracker.Controllers
                                TestTime4 = p.TestTime4
                            }).SingleOrDefault();
 
+            if (patient.Female == true)
+            {
+                ViewBag.Gender = "Female";
+            }
+            else
+            {
+                ViewBag.Gender = "Male";
+            }
             // get last six weeks data for graph
             var sixWeeksAgo = new DateTime();
             sixWeeksAgo = DateTime.Today.AddDays(-42);
@@ -148,7 +156,7 @@ namespace MySugarTracker.Controllers
                                patient.TestTime2 = patview.TestTime2;
                                patient.TestTime3 = patview.TestTime3;
                                patient.TestTime4 = patview.TestTime4;
-
+                               
             // get last six weeks data for graph
             var sixWeeksAgo = new DateTime();
             sixWeeksAgo = DateTime.Today.AddDays(-42);
