@@ -3,10 +3,10 @@
 @Styles.Render("~/dtpicker/css")
 
 @{
-    ViewBag.Title = "Create";
+    ViewBag.Title = "Create Patient Glucose Record";
 }
 
-<h2>
+<h2 align="center">
     @ViewBag.FirstName  @ViewBag.LastName
 </h2>
 
@@ -16,7 +16,7 @@
     @Html.AntiForgeryToken()
 
     <div class="form-horizontal">
-        <h4>Glucose Reading</h4>
+        <h4 align="center">Glucose Reading</h4>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
  
@@ -40,14 +40,15 @@
 
     <div class="form-group">
         <div class="col-md-offset-2 col-md-10">
-            <input type="submit" value="Create" class="btn btn-default" />
+            <input type="submit" value="Save" class="btn btn-default" />
         </div>
     </div>
     </div>
 }
 
 <div>
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Back to Glucose Reading History", "Index")
+    <div><p><a href="../Patients/Index">Back to Patient Profile &raquo;</a></p></div>
 </div>
 
 @section Scripts {

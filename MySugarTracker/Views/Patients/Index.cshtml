@@ -6,23 +6,19 @@
 }
 
 
-    
-           <h2>@Html.DisplayFor(model => model.FirstName) @Html.DisplayFor(model => model.LastName) </h2> 
+
+<h2 align="center">@Html.DisplayFor(model => model.FirstName) @Html.DisplayFor(model => model.LastName) </h2>
 
 
 
-   <p><a class="btn btn-default" href="../PatientSugarDatas/Create">Enter Glucose Reading &raquo;</a></p>
-   
+<div align="center" style="width:95%; height:500px;">@(Model.MyChart)</div>
+<p><a class="btn btn-default" style="height: 50px; width: 200px" href="../PatientSugarDatas/Create">Enter Glucose Reading &raquo;</a></p>
 
+<div><p><a href="../PatientSugarDatas/Index">See Glucose History &raquo;</a></p></div>
 
+<h2>Profile Information</h2>
 <table class="table table-bordered">
     <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.FirstName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.LastName)
-        </th>
         <th>
             @Html.DisplayNameFor(model => model.BirthDate)
         </th>
@@ -53,12 +49,6 @@
     </tr>
 
     <tr>
-        <td>
-            @Html.DisplayFor(model => model.FirstName)
-        </td>
-        <td>
-            @Html.DisplayFor(model => model.LastName)
-        </td>
         <td>
             @Html.DisplayFor(model => model.BirthDate)
         </td>
@@ -91,7 +81,7 @@
 
 </table>
 
-<h2>Patient Medical History</h2>
+<h2>Medical History</h2>
 <table class="table table-bordered">
     <tr>
 
@@ -143,7 +133,8 @@
         <td>
             @Html.DisplayFor(model => model.HighAlert)
         </td>
-        <td> @Html.DisplayFor(model => model.TestTime1)
+        <td>
+            @Html.DisplayFor(model => model.TestTime1)
         </td>
         <td>
             @Html.DisplayFor(model => model.TestTime2)
@@ -155,25 +146,24 @@
             @Html.DisplayFor(model => model.TestTime4)
         </td>
 
-
-
 </table>
-<div style="width:90%; height:500px;">@(Model.MyChart)</div>
+
+
 
 <div class="row">
     <div class="col-md-4">
-        <h2>Diabetes Information</h2> 
-        
-        <p><a  href="http://www.diabetes.org/"><img width="210" src="http://upload.wikimedia.org/wikipedia/en/b/b6/American_Diabetes_Association_logo.jpg"/> </a></p>
+        <h2>Diabetes Information</h2>
+
+        <p><a href="http://www.diabetes.org/"><img width="210" src="http://upload.wikimedia.org/wikipedia/en/b/b6/American_Diabetes_Association_logo.jpg" /> </a></p>
     </div>
     <div class="col-md-4">
         <h2>Diabetes Support</h2>
-       
-        <p><a class="btn btn-default" href="http://www.defeatdiabetes.org/get-healthy/diabetes-support-groups/"><img height="100" with="100" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcROdagRlOTBYyOBIcKXw_jM1gfRnMoegE0nriwcXQZ__dJLmP9d"/></a></p>
+
+        <p><a class="btn btn-default" href="http://www.defeatdiabetes.org/get-healthy/diabetes-support-groups/"><img height="100" with="100" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcROdagRlOTBYyOBIcKXw_jM1gfRnMoegE0nriwcXQZ__dJLmP9d" /></a></p>
     </div>
     <div class="col-md-4">
         <h2>Healthy Recipes</h2>
-        
-        <p><a href="http://allrecipes.com/recipes/everyday-cooking/special-diets/diabetic/"><img height="100" width="200" src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRDqaPfA5Se1u6-2LGcXC1p8HWFn3L5kA0oiwNW-BzF_AF94f9mP6u40KdA"/></a></p>
+
+        <p><a href="http://allrecipes.com/recipes/everyday-cooking/special-diets/diabetic/"><img height="100" width="200" src="https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRDqaPfA5Se1u6-2LGcXC1p8HWFn3L5kA0oiwNW-BzF_AF94f9mP6u40KdA" /></a></p>
     </div>
 </div>

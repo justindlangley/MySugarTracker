@@ -1,13 +1,13 @@
 ﻿@model IEnumerable<MySugarTracker.Models.PatientSugarData>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Glucose Reading History";
 }
 
-<h2>Index</h2>
+<h2 align="center">Glucose Reading History</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("New Glucose Reading", "Create")
 </p>
 <table class="table">
     <tr>
@@ -30,10 +30,10 @@
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.PatientSugarDataID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.PatientSugarDataID }) |
             @Html.ActionLink("Delete", "Delete", new { id=item.PatientSugarDataID })
         </td>
     </tr>
 }
-
+ 
 </table>
+<div><p><a href="../Patients/Index">Back to Patient Profile &raquo;</a></p></div>

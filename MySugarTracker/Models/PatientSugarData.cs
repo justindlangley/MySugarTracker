@@ -11,8 +11,10 @@ namespace MySugarTracker.Models
     {
         [Key]
         public int PatientSugarDataID { get; set; }
-        public string UserID { get; set;}        
+        public string UserID { get; set;}  
+        [Display(Name="Patient Glucose Reading")]
         public int patientSugarReading { get; set; }
+        [Display(Name="Date and Time")]
         public DateTime dateTime { get; set; }
         
     }

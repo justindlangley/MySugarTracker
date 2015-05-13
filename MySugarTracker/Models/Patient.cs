@@ -26,7 +26,7 @@ namespace MySugarTracker.Models
         [Display(Name = "History of Thyroid disease?")]
         public bool? ThyroidDisease { get; set; }
         [Required]
-        [Display(Name = "Female?")]
+        [Display(Name = "Gender")]
         public bool? Female { get; set; }
         [Required]
         [Display(Name = "Pregnant?")]
