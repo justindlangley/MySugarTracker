@@ -4,7 +4,7 @@
     ViewBag.Title = "Case Manager Profile Page";
 }
 
-<h2 align="center">@Html.DisplayFor(model => model.FirstName) @Html.DisplayFor(model => model.LastName) </h2>
+<h2 align="center">@Html.DisplayFor(model => model.FirstName) @Html.DisplayFor(model => model.LastName), Case Manager </h2>
 
 @*<p>
     @Html.ActionLink("Create New", "Create")
@@ -55,10 +55,10 @@
     {
         <tr>
             <td>
-                <a href="/Patients/Edit/@Html.DisplayFor(model => item.UserID)">@item.FirstName</a>
+                <a href="/Patients/Edit/@Html.DisplayFor(model => item.UserID)">@item.FirstName</a> <a href="/Patients/Edit/@Html.DisplayFor(model => item.UserID)">@item.LastName</a>
             </td>
             <td>
-                <a href="/Patients/Edit/@Html.DisplayFor(model => item.UserID)">@item.LastName</a>
+                
             </td>
             <td>
                 <a href="/Patients/Edit/@Html.DisplayFor(model => item.UserID)">@item.PhoneNumber</a>

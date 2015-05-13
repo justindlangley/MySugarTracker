@@ -7,7 +7,7 @@
 }
 
 
-<h2>@Html.DisplayFor(model => model.FirstName) @Html.DisplayFor(model => model.LastName) </h2> 
+<h2 align="center">Dr. @Html.DisplayFor(model => model.FirstName) @Html.DisplayFor(model => model.LastName) </h2> 
 
 
 
@@ -18,21 +18,19 @@
         </th>
         <th></th>
     </tr>
-    @foreach (var item in Model.PatientList)
-    {
-        <tr>
-            <td>
-                @Html.DisplayFor(model => item.FirstName)
-            </td>
-            <td>
-                @Html.DisplayFor(model => item.LastName)
-            </td>
-            <td>
-                @*@Html.ActionLink("See Patient Record", (model => model.User))*@
-                <a href="/Patients/Edit/@Html.DisplayFor(model => item.UserID)">See Patient Record</a>
-            </td>
-            
-        </tr>
+            @foreach (var item in Model.PatientList)
+            {
+                <tr>
+                    <td>
+                        <a href="/Patients/Edit/@Html.DisplayFor(model => item.UserID)">@item.FirstName</a> <a href="/Patients/Edit/@Html.DisplayFor(model => item.UserID)">@item.LastName</a>
+                    </td>
+                    <td>
+                        <a href="/Patients/Edit/@Html.DisplayFor(model => item.UserID)">@item.PhoneNumber</a>
+                    </td>
+                    <td>
+                        <a href="/Patients/Edit/@Html.DisplayFor(model => item.UserID)">@item.Email</a>
+                    </td>
+                </tr>
     }  
     </table>
     
