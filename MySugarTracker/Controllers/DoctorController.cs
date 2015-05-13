@@ -49,6 +49,8 @@ namespace MySugarTracker.Controllers
                                  UserID = u.Id
                              }).ToList();
 
+           
+
             return View(doctor);
         }
 
