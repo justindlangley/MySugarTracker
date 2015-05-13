@@ -46,7 +46,7 @@ namespace MySugarTracker.Controllers
                                  LastName = u.LastName,
                                  PhoneNumber = u.PhoneNumber,
                                  Email = u.Email,
-                                 User = u.Id
+                                 UserID = u.Id
                              }).ToList();
 
             return View(doctor);

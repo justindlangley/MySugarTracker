@@ -125,9 +125,9 @@ namespace MySugarTracker.Controllers
                 return HttpNotFound();
             }
 
-            
+                            
                            var patient = new PatientUser();
-                           
+                           //patient.UserID = patview.UserID;
                                patient.FirstName = patuser.FirstName;
                                patient.LastName = patuser.LastName;
                                patient.PhoneNumber = patuser.PhoneNumber;
@@ -178,17 +178,44 @@ namespace MySugarTracker.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "UserID,BirthDate,CardioVascularDisease,HighBloodPressure,ThyroidDisease,Female,Pregnant,EmailPref,SMSpref,LowAlert,HighAlert,TestTime1,TestTime2,TestTime3,TestTime4,WeightInPounds,HeightInInches")] Patient patient)
+        public ActionResult Edit([Bind(Include = "FirstName,LastName,PhoneNumber,Email,UserID,BirthDate,CardioVascularDisease,HighBloodPressure,ThyroidDisease,Female,Pregnant,EmailPref,SMSpref,LowAlert,HighAlert,TestTime1,TestTime2,TestTime3,TestTime4,WeightInPounds,HeightInInches")] PatientUser patientUser, string id)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(patient).State = EntityState.Modified;
-                db.SaveChanges();
-                return RedirectToAction("Index");
-            }
-            return View(patient);
-        }
 
+                Patient patview = db.Patients.Find(id);
+                ApplicationUser patuser = db.Users.Find(id);
+                
+                    patuser.FirstName = patientUser.FirstName;
+                    patuser.LastName = patientUser.LastName;
+                    patuser.PhoneNumber = patientUser.PhoneNumber;
+                    patuser.Email = patientUser.Email;
+                    patview.BirthDate = patientUser.BirthDate;
+                    patview.CardioVascularDisease = patientUser.CardioVascularDisease;
+                    patview.HighBloodPressure = patientUser.HighBloodPressure;
+                    patview.Female = patientUser.Female;
+                    patview.ThyroidDisease = patientUser.ThyroidDisease;
+                    patview.HeightInInches = patientUser.HeightInInches;
+                    patview.WeightInPounds = patientUser.WeightInPounds;
+                    patview.Pregnant = patientUser.Pregnant;
+                    patview.SMSpref = patientUser.SMSPref;
+                    patview.EmailPref = patientUser.EmailPref;
+                    patview.HighAlert = patientUser.HighAlert;
+                    patview.LowAlert = patientUser.LowAlert;
+                    patview.TestTime1 = patientUser.TestTime1;
+                    patview.TestTime2 = patientUser.TestTime2;
+                    patview.TestTime3 = patientUser.TestTime3;
+                    patview.TestTime4 = patientUser.TestTime4;
+                    //  };
+                    // Save the Patient object back in the database.
+                    //db.Entry(patuser).State = EntityState.Modified;
+                    db.Entry(patview).State = EntityState.Modified;
+                    db.SaveChanges();
+                    return RedirectToAction("../Doctor/Index");
+                }
+                return View(patientUser);
+            }
+        
         // GET: Patients/Delete/5
         public ActionResult Delete(string id)
         {

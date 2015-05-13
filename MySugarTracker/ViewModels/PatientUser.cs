@@ -21,6 +21,8 @@ namespace MySugarTracker.ViewModels
     public class PatientUser 
 
     {
+        
+
         [Display(Name="First Name")]
         public string FirstName { get; set; }
 
@@ -83,8 +85,9 @@ namespace MySugarTracker.ViewModels
         [Display(Name = "Thyroid Disease?")]
         public bool? ThyroidDisease { get; set; }
 
-        public string User { get; set; }
+        public string UserID { get; set; }
 
         public Highcharts MyChart { get; set; }
+
     }
 }
