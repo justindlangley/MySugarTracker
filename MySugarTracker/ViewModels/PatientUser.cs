@@ -80,7 +80,7 @@ namespace MySugarTracker.ViewModels
         [Display(Name = "Daily Fourth Sugar Reading")]
         public DateTime TestTime4 { get; set; }
 
-        [Display(Name = "Throid Disease?")]
+        [Display(Name = "Thyroid Disease?")]
         public bool? ThyroidDisease { get; set; }
 
         public string User { get; set; }
