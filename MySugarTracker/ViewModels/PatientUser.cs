@@ -64,22 +64,22 @@ namespace MySugarTracker.ViewModels
         [Display(Name = "Prefer Email Notification?")]
         public bool EmailPref { get; set; }
 
-        [Display(Name = "High Sugar Level Value")]
+        [Display(Name = "High Sugar Alert Level")]
         public int HighAlert { get; set; }
 
-        [Display(Name = "Low Sugar Level Value")]
+        [Display(Name = "Low Sugar Alert Level")]
         public int LowAlert { get; set; }
         
-        [Display(Name = "Daily First Sugar Reading")]
+        [Display(Name = "First Recommended Test Time")]
         public DateTime TestTime1 { get; set; }
 
-        [Display(Name = "Daily Second Sugar Reading")]
+        [Display(Name = "Second Recommended Test Time")]
         public DateTime TestTime2 { get; set; }
 
-        [Display(Name = "Daily Third Sugar Reading")]
+        [Display(Name = "Third Recommended Test Time")]
         public DateTime TestTime3 { get; set; }
 
-        [Display(Name = "Daily Fourth Sugar Reading")]
+        [Display(Name = "Fourth Recommended Test Time")]
         public DateTime TestTime4 { get; set; }
 
         [Display(Name = "Thyroid Disease?")]
