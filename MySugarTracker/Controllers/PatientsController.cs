@@ -190,6 +190,9 @@ namespace MySugarTracker.Controllers
         {
             if (ModelState.IsValid)
             {
+                var myId = User.Identity.GetUserId();
+                ApplicationUser cmuser = db.Users.Find(myId);
+                var cmtype = cmuser.Role;
 
                 Patient patview = db.Patients.Find(id);
                 ApplicationUser patuser = db.Users.Find(id);
@@ -210,16 +213,23 @@ namespace MySugarTracker.Controllers
                     patview.EmailPref = patientUser.EmailPref;
                     patview.HighAlert = patientUser.HighAlert;
                     patview.LowAlert = patientUser.LowAlert;
-                    patview.TestTime1 = patientUser.TestTime1;
-                    patview.TestTime2 = patientUser.TestTime2;
-                    patview.TestTime3 = patientUser.TestTime3;
-                    patview.TestTime4 = patientUser.TestTime4;
+                    patview.TestTime1 = DateTime.Now;
+                    patview.TestTime2 = DateTime.Now;
+                    patview.TestTime3 = DateTime.Now;
+                    patview.TestTime4 = DateTime.Now;
                     //  };
                     // Save the Patient object back in the database.
                     //db.Entry(patuser).State = EntityState.Modified;
                     db.Entry(patview).State = EntityState.Modified;
-                    db.SaveChanges();
+                db.SaveChanges();
+                if (cmtype == "D")
+                {
                     return RedirectToAction("../Doctor/Index");
+                }
+                else
+                {
+                    return RedirectToAction("../CaseManager/Index");
+                }
                 }
                 return View(patientUser);
             }
