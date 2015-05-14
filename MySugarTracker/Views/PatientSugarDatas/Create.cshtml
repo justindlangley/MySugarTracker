@@ -47,8 +47,9 @@
 }
 
 <div>
-    @Html.ActionLink("Back to Glucose Reading History", "Index")
-    <div><p><a href="~/Views/Patients/">Back to Patient Profile &raquo;</a></p></div>
+    <p>@Html.ActionLink("Back to Glucose Reading History", "Index") </p>
+    <p>@Html.ActionLink("Back to Patient Profile", "../Patients/Index")</p>
+
 </div>
 
 @section Scripts {
